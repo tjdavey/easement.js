@@ -23,7 +23,7 @@
             return -change*(time/=duration)*(time-2) + offset;
         },
         easeInOutQuad: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2*Math.pow(time, duration, 2) + offset;
+            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 2) + offset;
             return -change/2 * ((--time)*(time-2) - 1) + offset;
         },
         easeInCubic: function (time, duration, offset, change) {
@@ -33,8 +33,8 @@
             return change * (Math.pow(time/duration-1, 3) + 1) + offset;
         },
         easeInOutCubic: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, duration, 3) + offset;
-            return change/2 * (Math.pow(t-2, 3) + 2) + offset;
+            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 3) + offset;
+            return change/2 * (Math.pow(time-2, 3) + 2) + offset;
         },
         easeInQuart: function (time, duration, offset, change) {
             return change * Math.pow(time/duration, 4) + offset;
@@ -43,17 +43,17 @@
             return -change * (Math.pow(time/duration-1, 4) - 1) + offset;
         },
         easeInOutQuart: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, duration, 4) + offset;
+            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 4) + offset;
             return -change/2 * (Math.pow(time-2, 4) - 2) + offset;
         },
         easeInQuint: function (time, duration, offset, change) {
             return change * Math.pow(time/duration, 5) + offset;
         },
         easeOutQuint: function (time, duration, offset, change) {
-            return change * (Math.pow(t/d-1, 5) + 1) + offset;
+            return change * (Math.pow(time/duration-1, 5) + 1) + offset;
         },
         easeInOutQuint: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, duration, 5) + offset;
+            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 5) + offset;
             return change/2 * (Math.pow(time-2, 5) + 2) + offset;
         },
         easeInSine: function (time, duration, offset, change) {
