@@ -16,74 +16,74 @@
 
 (function() {
     easement = {
-        easeInQuad: function (time, duration, offset, change) {
-            return change*(time/=duration)*time + offset;
+        easeInQuad: function (time) {
+            return Math.pow(time, 2);
         },
-        easeOutQuad: function (time, duration, offset, change) {
-            return -change*(time/=duration)*(time-2) + offset;
+        easeOutQuad: function (time) {
+            return -(time*(time-2));
         },
-        easeInOutQuad: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 2) + offset;
-            return -change/2 * ((--time)*(time-2) - 1) + offset;
+        easeInOutQuad: function (time) {
+            if (time < 0.5) return Math.pow(time, 2)*2;
+            return -((time-1)*(time*2-2)-1);
         },
-        easeInCubic: function (time, duration, offset, change) {
-            return change * Math.pow(time/duration, 3) + offset;
+        easeInCubic: function (time) {
+            return Math.pow(time,3);
         },
-        easeOutCubic: function (time, duration, offset, change) {
-            return change * (Math.pow(time/duration-1, 3) + 1) + offset;
+        easeOutCubic: function (time) {
+            return Math.pow(time-1,3)+1;
         },
-        easeInOutCubic: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 3) + offset;
-            return change/2 * (Math.pow(time-2, 3) + 2) + offset;
+        easeInOutCubic: function (time) {
+            if (time < 0.5) return Math.pow(time, 3)*4;
+            return (Math.pow(time-1, 3)*4+1);
         },
-        easeInQuart: function (time, duration, offset, change) {
-            return change * Math.pow(time/duration, 4) + offset;
+        easeInQuart: function (time) {
+            return Math.pow(time, 4);
         },
-        easeOutQuart: function (time, duration, offset, change) {
-            return -change * (Math.pow(time/duration-1, 4) - 1) + offset;
+        easeOutQuart: function (time) {
+            return -(Math.pow(time-1, 4) - 1);
         },
-        easeInOutQuart: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 4) + offset;
-            return -change/2 * (Math.pow(time-2, 4) - 2) + offset;
+        easeInOutQuart: function (time) {
+            if (time < 0.5) return Math.pow(time, 4)*8;
+            return -(Math.pow(time-1, 4)*8-1);
         },
-        easeInQuint: function (time, duration, offset, change) {
-            return change * Math.pow(time/duration, 5) + offset;
+        easeInQuint: function (time) {
+            return Math.pow(time/1, 5);
         },
-        easeOutQuint: function (time, duration, offset, change) {
-            return change * (Math.pow(time/duration-1, 5) + 1) + offset;
+        easeOutQuint: function (time) {
+            return (Math.pow(time-1, 5)+1);
         },
-        easeInOutQuint: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(time, 5) + offset;
-            return change/2 * (Math.pow(time-2, 5) + 2) + offset;
+        easeInOutQuint: function (time) {
+            if (time < 0.5) return Math.pow(time, 5)*16;
+            return (Math.pow(time-1, 5)*16+1);
         },
-        easeInSine: function (time, duration, offset, change) {
-            return change * (1-Math.cos(time/duration * (Math.PI/2))) + offset;
+        easeInSine: function (time) {
+            return 1-Math.cos(time/1*(Math.PI/2));
         },
-        easeOutSine: function (time, duration, offset, change) {
-            return change * Math.sin(time/duration * (Math.PI/2)) + offset;
+        easeOutSine: function (time) {
+            return Math.sin(time/1*(Math.PI/2));
         },
-        easeInOutSine: function (time, duration, offset, change) {
-            return change/2 * (1 - Math.cos(Math.PI * time/duration) ) + offset;
+        easeInOutSine: function (time) {
+            return 0.5*(1-Math.cos(Math.PI*time/1));
         },
-        easeInExpo: function (time, duration, offset, change) {
-            return change * Math.pow(2, 10 * (time/duration - 1)) + offset;
+        easeInExpo: function (time) {
+            return Math.pow(2, 10 * (time-1));
         },
-        easeOutExpo: function (time, duration, offset, change) {
-            return change * (-Math.pow(2, -10 * time/duration) + 1) + offset;
+        easeOutExpo: function (time) {
+            return (-Math.pow(2,-10*time)+1);
         },
-        easeInOutExpo: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * Math.pow(2, 10 * (time - 1)) + offset;
-            return change/2 * (-Math.pow(2, -10 * --time) + 2) + offset;
+        easeInOutExpo: function (time) {
+            if (time < 0.5) return 0.5*Math.pow(2,10*(time*2-1));
+            return 0.5*(-Math.pow(2,-10*(time*2-1))+2);
         },
-        easeInCirc: function (time, duration, offset, change) {
-            return change * (1 - Math.sqrt(1 - (time/=duration)*time) - 1) + offset;
+        easeInCirc: function (time) {
+            return (1-Math.sqrt(1-time*time));
         },
-        easeOutCirc: function (time, duration, offset, change) {
-            return change * Math.sqrt(1 - (time=time/duration-1)*time) + offset;
+        easeOutCirc: function (time) {
+            return Math.sqrt(1-(time-=1)*time);
         },
-        easeInOutCirc: function (time, duration, offset, change) {
-            if ((time/=duration/2) < 1) return change/2 * (1 - Math.sqrt(1 - time*time)) + offset;
-            return change/2 * (Math.sqrt(1 - (time-=2)*time) + 1) + offset;
+        easeInOutCirc: function (time) {
+            if (time < 0.5) return 0.5*(1-Math.sqrt(1-(time*4)*time));
+            return 0.5*(Math.sqrt((1-(time-=1)*time*4))+1);
         }
     }
     
