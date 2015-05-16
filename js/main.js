@@ -18,8 +18,8 @@ for(key in easement){
     var ctx_height = easing_canvas.height;
     ctx.beginPath();
     ctx.moveTo(0, ctx_height);
-    for(var x = 0; x < ctx_width; x++){
-        ctx.lineTo(x, ctx_height-easing(x, ctx_width, 0, ctx_height));    
+    for(var x = 0; x < 1; x = x+1/ctx_width){
+        ctx.lineTo(x*ctx_width, ctx_height*easing(x));
     }
     ctx.stroke();
     
