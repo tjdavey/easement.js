@@ -1,6 +1,6 @@
 {
   "name": "easement.js",
-  "version": "0.9.1",
+  "version": "1.0.0",
   "description": "A lightweight library of for easing based on Penner's easing equations.",
   "main": "easement.js",
   "scripts": {
