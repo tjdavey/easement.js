@@ -5,7 +5,8 @@
   "main": "easement.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha",
-    "test-travis": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "test-travis": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
+    "coveralls": "^2.11.4",
     "istanbul": "^0.3.22",
     "mocha": "^2.3.3"
   }
