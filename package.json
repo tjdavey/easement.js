@@ -1,0 +1,31 @@
+{
+  "name": "easement.js",
+  "version": "0.9.1",
+  "description": "A lightweight library of for easing based on Penner's easing equations.",
+  "main": "easement.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjdavey/easement.js"
+  },
+  "keywords": [
+    "easement",
+    "easing",
+    "ease",
+    "easeIn",
+    "easeOut",
+    "penner",
+    "animation"
+  ],
+  "author": "Tristan Davey <tristan@tristandavey.com>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/tjdavey/easement.js/issues"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}
