@@ -5,8 +5,8 @@
   "main": "easement.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha",
-    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
-    "test-travis": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec test/*"
+    "coverage": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec",
+    "test-travis": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
   },
   "repository": {
     "type": "git",
