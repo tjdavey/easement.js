@@ -4,7 +4,8 @@
   "description": "A lightweight library of for easing based on Penner's easing equations.",
   "main": "easement.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "node_modules/mocha/bin/mocha",
+    "test-travis": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
+    "istanbul": "^0.3.22",
     "mocha": "^2.3.3"
   }
 }

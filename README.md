@@ -1,7 +1,7 @@
 A lightweight library of for easing based on Penner's easing equations.
 
 [![Build Status](https://travis-ci.org/tjdavey/easement.js.svg)](https://travis-ci.org/tjdavey/easement.js)
-[![Coverage Status](https://img.shields.io/coveralls/tjdavey/easement.js.svg)](https://coveralls.io/github/tjdavey/easement.js)
+[![Coverage Status](https://coveralls.io/repos/tjdavey/easement.js/badge.svg?branch=master&service=github)](https://coveralls.io/github/tjdavey/easement.js?branch=master)
 
 ## Installation
 
