@@ -31,7 +31,7 @@ describe('Easement.js', function() {
 
     it('should a custom startValue and endValue', function(){
       var result = Easement.ease(linearEasing, 0.5, {startValue: 100, endValue: 200});
-      expect(result).to.equal(50);
+      expect(result).to.equal(150);
     });
 
     it('should raise an exception for an invalid option property', function(){

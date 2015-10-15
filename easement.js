@@ -127,7 +127,7 @@
         // Return the easing result
         var deltaValue = options.endValue - options.startValue;
         var deltaTime = options.endTime - options.startTime;
-        return easing((currentTime - options.startTime)/deltaTime) * deltaValue;
+        return options.startValue+easing((currentTime - options.startTime)/deltaTime) * deltaValue;
       }
     }
   };
