@@ -96,7 +96,7 @@
     ease: function (easing, currentTime, options){
       // Set any options defaults required.
       if (!options) options = {};
-      for (defaultKey in this._defaults) {
+      for (var defaultKey in this._defaults) {
         if (!(defaultKey in options)) {
           options[defaultKey] = this._defaults[defaultKey];
         }
@@ -111,7 +111,7 @@
       }
 
       // Validate the options to avoid programming errors.
-      for (optionKey in options) {
+      for (var optionKey in options) {
         if (isNaN(options[optionKey])) {
           throw new Error('`options.' + optionKey + '` must be set to an numerical value');
         }
@@ -140,4 +140,4 @@
       this.easement = easement;
   }
   
-}())
+}());
