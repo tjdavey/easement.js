@@ -19,8 +19,7 @@
     <header>
       <div class="inner">
         <h1>Easement.js</h1>
-        <h2>A simple javascript library for easing.</h2>
-        <a href="https://github.com/tjdavey/easement.js" class="button"><small>Explore easement.js on</small>GitHub</a>
+        <h2>A lightweight javascript library for easing.</h2>
       </div>
     </header>
 
@@ -28,30 +27,143 @@
       <div class="inner clearfix">
         <section id="main-content">
           <h1>Simple, Basic, Easing</h1>
-		  <p>Easement.js is a collection of basic functions that assist in changing a value over time in a non-linear fashion. The library is based on <a href="http://www.robertpenner.com/easing/">Robert Penner's easing equations</a> and replicates the functionality of parts of jQuery UI's Easing functionality and George McGinley Smith jQuery Easing plugin without the overhead of jQuery.</p>
-		  
-		  <h1>Easings</h1>
+		  <p>Easement.js is a lightweight set of functions that assist in changing a value over time. The library is based on <a href="http://www.robertpenner.com/easing/">Robert Penner's easing equations</a> and replicates the functionality of parts of jQuery UI's Easing functionality and George McGinley Smith jQuery Easing plugin without the overhead of jQuery.</p>
+
+          <h1 id="usageSection">Usage</h1>
+          <h2 id="basicUsageSection">Basic Usage</h2>
+
+          <p>
+              The easiest way to ease a value with Easement.js is to utilise the convenient <em>ease</em> method. This
+              can return the value of the given <em>easing</em> for the <em>current time</em> in relation to the
+              provided <em>options</em>. For convenience, the <em>options</em> allow you to establish the start and end
+              of the easing (and thus duration) and the start and end values of the easing.
+          </p>
+
+          <pre class="signature">Easement.ease(<em>Easing</em>, <em>Current Time</em>, <em>Options</em>);</pre>
+
+          <dl>
+              <dt>
+                Easing
+              </dt>
+              <dd>
+                An <a href="#easingSection">easing function or a string representation</a> of a bundled easing function name.
+              </dd>
+              <dt>
+                Current Time
+              </dt>
+              <dd>
+                A numerical value defining the current time to retrieve the eased value for. A unit of time based on your requirements, beginning at 0.
+              </dd>
+              <dt>
+                Options
+              </dt>
+              <dd>
+                An object containing the <a href="#optionSection">options</a> configuring the change in value and timing this easing.
+              </dd>
+          </dl>
+
+          <h3 id="optionSection">Options</h3>
+
+          <dl>
+              <dt>
+                <code>startTime</code>
+              </dt>
+              <dd>
+                  Default: 0<br />
+                  The time at which easing will begin. If the current time is before this value  <em>ease()</em> will return <code>startValue</code>.
+              </dd>
+              <dt>
+                <code>endTime</code>
+              </dt>
+              <dd>
+                  Default: 1<br />
+                  The time at which easing will end. If the current time is after this value  <em>ease()</em> will return <code>endValue</code>.
+              </dd>
+              <dt>
+                <code>startValue</code>
+              </dt>
+              <dd>
+                  Default: 0<br />
+                  The value at the beginning of easing and before <code>startTime</code>.
+              </dd>
+              <dt>
+                <code>endValue</code>
+              </dt>
+              <dd>
+                  Default: 1<br />
+                  The value at the end of easing and after <code>startTime</code>.
+              </dd>
+          </dl>
+
+          <h3 id="exampleSection">Examples</h3>
+
+          <h4>Simple Example</h4>
+
+          <p>This example loops through 1-unit time intervals from 0 to 10, using the 'easeInCirc' easing to ease the value 0 (the default <em>startValue</em>) to 5 (the specified <em>endValue</em>)</p>
+
+          <pre id="simpleExample" class="exampleCode">
+var results = [];
+for (var i = 0; i <= 10; i++){
+  results.push(Easement.ease('easeInCirc', i, {
+    endTime: 10,
+    endValue: 5
+  }));
+}</pre>
+
+          <p>In this example <em>results</em> would be an array as such.</p>
+
+          <pre class="exampleOutput">
+[
+  0,
+  0.025062814466900174,
+  0.10102051443364402,
+  0.2303039929152717,
+  0.41742430504416006,
+  0.669872981077807,
+  0.9999999999999998,
+  1.4292857857285752,
+  2.000000000000001,
+  2.820550528229664,
+  5
+]</pre>
+
+          <h4>Advanced Example</h4>
+
+          <p>The options in this example are configured so the value will be eased from 2 to 8.2 using the 'easeInOutQuint' bundled easing function. The easing will begin at 500 time units, continuing for 1000 time units, ending at 1500 time units. This example will assign the value at 750 time units to <em>result</em>.</p>
+
+          <pre>var result = Easement.ease(Easement.easings.easeInOutQuint, 750, {
+    startTime: 500,
+    endTime: 1500,
+    startValue: 2,
+    endValue: 8.2
+});</pre>
+
+          <p>In this example <em>result</em> would be a value of <code>2.096875</code>.</p>
+
+		  <h1 id="easingSection">Easings</h1>
+          <h2 id="bundledEasingSection">Bundled Easing Functions</h2>
 		  <p>These diagrams are dynamically generated from the latest version of easement.js and document each method and the change of value over time that method produces.</p>
 		  
 		  <div id="easings">
-		  	
 		  </div>
-          <h1>Usage</h1>
-		  <p></p>
+
         </section>
 
         <aside id="sidebar">
-          <a href="https://github.com/tjdavey/easement.js/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
+          <h2>Get Easement.js</h2>
+          <code>
+            npm install easement.js
+          </code>
+          <code>
+            bower install easement.js
+          </code>
+          <a href="https://github.com/tjdavey/easement.js/releases/latest" class="button">
+            <svg class="button-icon" viewBox="0 0 512 512">
+              <path d="M 96.00,96.00l-96.00,96.00l 256.00,256.00l 256.00-256.00l-96.00-96.00L 256.00,256.00L 96.00,96.00z"/>
+            </svg>
+            Download Latest Release
           </a>
-          <a href="https://github.com/tjdavey/easement.js/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-          <p>
-          	Theme based on the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-          </p>
+
         </aside>
       </div>
     </div>

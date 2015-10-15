@@ -1,7 +1,8 @@
+// Setup a list of easings
 var easings_element = document.getElementById('easings');
 
-for(key in easement){
-    var easing = easement[key];
+for(key in easement.easings){
+    var easing = easement.easings[key];
     
     var easing_element = document.createElement('div');
     easing_element.setAttribute('class', 'easing easing-'+key);
