@@ -1,0 +1,27 @@
+{
+  "name": "easement.js",
+  "main": "easement.js",
+  "version": "1.0.0",
+  "homepage": "http://tjdavey.github.io/easement.js/",
+  "authors": [
+    "Tristan Davey <tristan@tristandavey.com>"
+  ],
+  "description": "A lightweight library of for easing based on Penner's easing equations.",
+  "keywords": [
+    "easement",
+    "easing",
+    "ease",
+    "easeIn",
+    "easeOut",
+    "penner",
+    "animation"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

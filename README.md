@@ -1,12 +1,18 @@
 A lightweight library of for easing based on Penner's easing equations.
 
+[![npm version](https://badge.fury.io/js/easement.js.svg)](https://www.npmjs.com/package/easement.js)
 [![Build Status](https://travis-ci.org/tjdavey/easement.js.svg)](https://travis-ci.org/tjdavey/easement.js)
 [![Coverage Status](https://coveralls.io/repos/tjdavey/easement.js/badge.svg?branch=master&service=github)](https://coveralls.io/github/tjdavey/easement.js?branch=master)
 
 ## Installation
 
+### NPM
+
 	npm install easement.js
 
+### Bower
+
+	bower install easement.js
 
 ## Documentation
 
@@ -14,7 +20,12 @@ For information on using easement.js, the included easing functions and writing 
 
 ## Basic Usage
 
-	Easement.ease('easeInCirc', 100, {startTime: 75, endTime: 130, startValue: 21, endValue: 32});
+	Easement.ease('easeInCirc', 100, {
+		startTime: 75,
+		endTime: 130,
+		startValue: 21,
+		endValue: 32
+	});
 
 ## Contributions
 
