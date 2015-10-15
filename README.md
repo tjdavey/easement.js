@@ -1,8 +1,10 @@
 A lightweight library of for easing based on Penner's easing equations.
 
-[![npm version](https://badge.fury.io/js/easement.js.svg)](https://www.npmjs.com/package/easement.js)
+[![Bower](https://img.shields.io/bower/v/easement.js.svg)](http://bower.io/search/?q=easement.js)
+[![npm version](https://img.shields.io/npm/v/easement.js.svg)](https://www.npmjs.com/package/easement.js)
 [![Build Status](https://travis-ci.org/tjdavey/easement.js.svg)](https://travis-ci.org/tjdavey/easement.js)
 [![Coverage Status](https://coveralls.io/repos/tjdavey/easement.js/badge.svg?branch=master&service=github)](https://coveralls.io/github/tjdavey/easement.js?branch=master)
+[![Code Climate](https://codeclimate.com/github/tjdavey/easement.js/badges/gpa.svg)](https://codeclimate.com/github/tjdavey/easement.js)
 
 ## Installation
 
